@@ -1,5 +1,5 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const paths = {
@@ -9,6 +9,10 @@ const paths = {
 };
 
 module.exports = {
+  devServer: {
+    inline: true,
+    port: 8888
+  },
   entry: path.join(paths.SRC, "app.js"),
   output: {
     path: paths.DIST,
@@ -52,21 +56,20 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
-        use: [{
-          loader: "style-loader" // creates style nodes from JS strings
-        }, {
-          loader: "css-loader" // translates CSS into CommonJS
-        }, {
-          loader: "sass-loader" // compiles Sass to CSS
-        }]
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
+
     ]
   },
   resolve: {
     extensions: [".js", ".jsx"]
   },
   plugins: [
-    new CleanWebpackPlugin(paths.DIST),
+    new CleanWebpackPlugin(`${paths.DIST}`),
     new HtmlWebpackPlugin({
       template: path.join(paths.SRC, "index.html")
     })
