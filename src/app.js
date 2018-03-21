@@ -1,23 +1,29 @@
+import ReactDOM from "react-dom";
 import React, { Component } from "react";
-import { render } from "react-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
-import InlineSVG from './components/atoms/InlineSVG'
-import ImageLoader from './components/atoms/ImageLoader'
+import "./scss/style.scss";
 
-import './scss/style.scss'
+//pages
+import Home from "./components/pages/Home";
+import Page1 from "./components/pages/Page1";
 
-export default class Hello extends Component {
-
-  render() {
-    return (
-      <div>
-        Hello from react
-        <InlineSVG source="./assets/app-cloud.svg" />
-        <ImageLoader className="image" source="./assets/keen.png" />
-      </div>
-    );
-  }
-}
-
-
-render(<Hello />, document.getElementById("app"));
+ReactDOM.render(
+  <BrowserRouter>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/page-1">Page 1</Link>
+        </li>
+      </ul>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/page-1" component={Page1} />
+      </Switch>
+    </div>
+  </BrowserRouter>,
+  document.getElementById("root")
+);

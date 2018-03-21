@@ -13,7 +13,7 @@ module.exports = {
     inline: true,
     port: 8888
   },
-  entry: path.join(paths.SRC, "app.js"),
+  entry: path.join(paths.SRC, "App.js"),
   output: {
     path: paths.DIST,
     // publicPath: paths.DIST,
