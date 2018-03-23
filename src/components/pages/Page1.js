@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
+import Header from '../organisms/Header'
 import ImageLoader from '../atoms/ImageLoader'
 import Title from '../atoms/Title'
 
@@ -9,6 +10,8 @@ class Page1 extends Component {
   render() {
     return (
       <div>
+        <Header/>
+
         <Title>Page 1</Title>
 
         <ImageLoader className="image" source="./assets/keen.png" />

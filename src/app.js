@@ -1,29 +1,27 @@
 import ReactDOM from "react-dom";
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducers from "./reducers";
 
 import "./scss/style.scss";
+let store = createStore(reducers);
 
 //pages
 import Home from "./components/pages/Home";
 import Page1 from "./components/pages/Page1";
+import Todo from "./components/pages/Todo";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/page-1">Page 1</Link>
-        </li>
-      </ul>
+  <Provider store={store}>
+    <HashRouter>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/page-1" component={Page1} />
+        <Route exact path="/todo" component={Todo} />
       </Switch>
-    </div>
-  </BrowserRouter>,
+    </HashRouter>
+  </Provider>,
   document.getElementById("root")
 );

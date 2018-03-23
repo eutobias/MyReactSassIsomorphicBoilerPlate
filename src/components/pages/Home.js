@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
+import Header from '../organisms/Header'
 import InlineSVG from '../atoms/InlineSVG'
 import ImageLoader from '../atoms/ImageLoader'
 import Title from '../atoms/Title'
@@ -10,6 +11,8 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Header/>
+
         <Title>Hello from react</Title>
         <InlineSVG source="./assets/app-cloud.svg" />
 
