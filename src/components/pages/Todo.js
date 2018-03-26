@@ -12,26 +12,42 @@ import FilterTodoBar from "../molecules/FilterTodoBar";
 import { connect } from "react-redux";
 import { addTodo, setVisibilityFilter, toggleTodo } from "../../actions";
 
+import "../../scss/pages/todos.scss";
 class Todo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <div>
         <Header />
         <Title level="4">Todo List</Title>
-        <AddTodoForm addTodo={addTodo} />
-        <TodoList onTodoClick={toggleTodo} />
-        <FilterTodoBar />
+        <AddTodoForm addTodo={this.props.addTodo} />
+        <TodoList todos={this.props.todos} onTodoClick={this.props.toggleTodo} />
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  console.log("mapStateToProps", state);
+  return {
+    todos: state.todos,
+    visibilityFilter: state.visibilityFilter
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
-    onSubmit: text => {
+    addTodo: text => {
       dispatch(addTodo(text));
+    },
+    toggleTodo: text => {
+      dispatch(toggleTodo(text));
     }
   };
 };
 
-export default connect(null, mapDispatchToProps)(Todo);
+export default connect(mapStateToProps, mapDispatchToProps)(Todo);

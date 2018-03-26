@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FilterTodoBar = props => {
   return (
-    <ul>
+    <ul className="filterTodoList">
       <li>Filter</li>
       <li>All</li>
       <li>Active</li>

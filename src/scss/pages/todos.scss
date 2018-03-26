@@ -1,0 +1,34 @@
+.todoList {
+  font-size: 0.75rem;
+  margin: 0;  
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 1.25rem 0;
+    border-top: 1px solid #ccc;
+
+    &.done {
+      text-decoration: line-through;
+    }
+    
+    &:first-child {
+      border-top:none;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.filterTodoList {
+  display: flex;
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;  
+
+  li {
+    margin-right: 1.25rem;
+  }
+}
