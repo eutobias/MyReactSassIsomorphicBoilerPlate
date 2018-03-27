@@ -11,7 +11,7 @@ import FilterTodoBar from "../molecules/FilterTodoBar";
 import { connect } from "react-redux";
 import { addTodo, setVisibilityFilter, toggleTodo } from "../../actions";
 
-import "../../scss/pages/todos.scss";
+// import "../../scss/pages/todos.scss";
 class Todo extends Component {
   constructor(props) {
     super(props);
