@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import Header from '../organisms/Header'
-import ImageLoader from '../atoms/ImageLoader'
-import Title from '../atoms/Title'
+import Header from '../../organisms/Header'
+import ImageLoader from '../../atoms/ImageLoader'
+import Title from '../../atoms/Title'
 
 class Page1 extends Component {
 
