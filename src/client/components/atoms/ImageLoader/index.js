@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const ImageLoader = (props) => {
   const { className, source } = props
-  const _require = require.context('../../', true)
+  const _require = require.context('../../../', true)
   return (
     <img
       className={`${className || ''}`} 

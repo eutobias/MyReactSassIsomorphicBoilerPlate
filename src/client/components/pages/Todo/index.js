@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-import Header from "../organisms/Header";
-import InlineSVG from "../atoms/InlineSVG";
-import ImageLoader from "../atoms/ImageLoader";
-import Title from "../atoms/Title";
-import AddTodoForm from "../molecules/AddTodoForm";
-import TodoList from "../molecules/TodoList";
-import FilterTodoBar from "../molecules/FilterTodoBar";
+import Header from "../../organisms/Header";
+import InlineSVG from "../../atoms/InlineSVG";
+import ImageLoader from "../../atoms/ImageLoader";
+import Title from "../../atoms/Title";
+import AddTodoForm from "../../molecules/AddTodoForm";
+import TodoList from "../../molecules/TodoList";
+import FilterTodoBar from "../../molecules/FilterTodoBar";
 
 import { connect } from "react-redux";
-import { addTodo, setVisibilityFilter, toggleTodo } from "../../actions";
+import { addTodo, setVisibilityFilter, toggleTodo } from "../../../actions";
 
 // import "../../scss/pages/todos.scss";
 class Todo extends Component {

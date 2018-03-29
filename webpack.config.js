@@ -6,7 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const paths = {
   DIST: path.resolve(__dirname, "dist"),
   PUBLIC: path.resolve(__dirname, "public"),
-  SRC: path.resolve(__dirname, "src")
+  SRC: path.resolve(__dirname, "src"),
+  CLIENT: path.resolve(__dirname, `src${path.sep}client`)
 };
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
     inline: true,
     port: 8888
   },
-  entry: path.join(paths.SRC, "App.js"),
+  entry: path.join(paths.CLIENT, "App.js"),
   output: {
     path: paths.DIST,
     // publicPath: paths.DIST,

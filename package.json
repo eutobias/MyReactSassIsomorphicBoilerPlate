@@ -27,15 +27,16 @@
     "webpack-dev-server": "^3.1.1"
   },
   "scripts": {
-    "dev:client": "webpack-dev-server --mode development",
+    "dev": "webpack-dev-server --mode development",
     "build:client": "webpack --mode production",
-    "build:server": "babel ./server -d build/server",
+    "build:server": "babel ./src/server -d build/server",
     "build:watch:server": "babel ./server -d build/server --watch",
-    "build:watch:client": "webpack --config ./webpack.config.js/ --watch",
+    "build:watch:client": "webpack --mode development --config ./webpack.config.js/ --watch",
     "start:dev": "parallelshell 'npm run build:watch:server' 'npm run build:watch:client' 'nodemon ./build/server/index.js'"
   },
   "dependencies": {
     "connect": "^3.6.6",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.2.0",
