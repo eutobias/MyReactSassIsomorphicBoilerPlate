@@ -14,7 +14,7 @@ class Home extends Component {
         <Header/>
 
         <Title>Hello from react</Title>
-        <InlineSVG source="./assets/app-cloud.svg" />
+        <InlineSVG className="svgFDP"  source="./assets/app-cloud.svg" />
 
         <p>Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Manduma pindureta quium dia nois paga. Quem manda na minha terra sou euzis! Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.</p>
 
